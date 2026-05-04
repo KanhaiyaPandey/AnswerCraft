@@ -1,0 +1,33 @@
+{
+  "name": "@answer-craft/api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json && tsc-alias -p tsconfig.json",
+    "start": "node dist/index.js",
+    "lint": "eslint src/",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@answer-craft/lib": "*",
+    "@answer-craft/types": "*",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.0",
+    "express": "^4.19.0",
+    "express-async-errors": "^3.1.1",
+    "multer": "^1.4.5-lts.1",
+    "openai": "^4.47.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@answer-craft/config": "*",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/multer": "^1.4.11",
+    "@types/node": "^20.12.0",
+    "tsc-alias": "^1.8.10",
+    "tsx": "^4.11.0",
+    "typescript": "^5.4.0"
+  }
+}
