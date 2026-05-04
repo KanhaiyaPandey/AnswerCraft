@@ -7,34 +7,6 @@ import { useInterviewStore } from "@/store/interview.store";
 import { formatDuration } from "@answer-craft/lib";
 
 // -----------------------------------------------------------
-// Animated waveform bars
-// -----------------------------------------------------------
-function WaveformBars({ isActive }: { isActive: boolean }) {
-  const bars = Array.from({ length: 28 }, (_, i) => i);
-  return (
-    <div style={{ display: "flex", alignItems: "center", gap: "3px", height: "48px" }}>
-      {bars.map((i) => (
-        <div
-          key={i}
-          style={{
-            width: "3px",
-            borderRadius: "99px",
-            background: isActive
-              ? `rgba(99,102,241,${0.4 + Math.random() * 0.6})`
-              : "rgba(255,255,255,0.1)",
-            height: isActive
-              ? `${20 + Math.floor(Math.random() * 80)}%`
-              : "20%",
-            transition: isActive ? `height ${0.1 + (i % 5) * 0.05}s ease` : "height 0.3s ease",
-            animationDelay: `${i * 0.05}s`,
-          }}
-        />
-      ))}
-    </div>
-  );
-}
-
-// -----------------------------------------------------------
 // AudioVisualizer — real-time canvas waveform from mic stream
 // -----------------------------------------------------------
 function AudioVisualizer({ isRecording }: { isRecording: boolean }) {
